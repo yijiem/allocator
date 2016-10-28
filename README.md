@@ -1,11 +1,11 @@
 # allocator
 customized C++ allocator library
 
-### allocators list
+### list of allocators:
 count allocator: an allocator which counts the number of bytes its user holds
 
-### how to run
-eg: run the set_test inside ./example
+### how to run:
+eg: run the set_test inside example/
 ```
 mkdir build
 cd build
