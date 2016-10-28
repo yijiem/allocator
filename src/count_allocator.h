@@ -1,8 +1,6 @@
 //
 // Created by Yijie Ma on 10/27/16.
 //
-#pragma once
-
 #ifndef ALLOCATOR_COUNT_ALLOCATOR_H
 #define ALLOCATOR_COUNT_ALLOCATOR_H
 
@@ -23,11 +21,13 @@ public:
     }
 
     T* allocate(std::size_t num) {
+        // std::cout << "[allocate " << num * sizeof(T) << " bytes]" << std::endl;
         *count_ += num * sizeof(T);
         return static_cast<T*>(::operator new(num * sizeof(T)));
     }
 
     void deallocate(T* p, std::size_t num) {
+        // std::cout << "[deallocate " << num * sizeof(T) << " bytes]" << std::endl;
         *count_ -= num * sizeof(T);
         ::operator delete(p);
     }
